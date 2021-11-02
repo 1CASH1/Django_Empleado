@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}
+  
+{% endblock title %}
+
+{% block content %}
+{% include "includes\header.html" %}
+
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell" >Registrar personas </h1>        
+        <form class="cell grid-x grid-margin-x" method="POST" enctype="multipart/form-data"> {% csrf_token %} 
+            <div class="medium-6 cell">
+                <label> Nombres:
+                    {{ form.first_name }}
+                </label>
+            </div>       
+            <div class="medium-6 cell">
+                <label> Apellidos:
+                    {{ form.last_name }}
+                </label>
+            </div>       
+            <div class="medium-6 cell">
+                <label> Trabajo:
+                    {{ form.job }}
+                </label>
+            </div>       
+            <div class="medium-6 cell">
+                <label> Departamentos:
+                    {{ form.departamento }}
+                </label>
+            </div>        
+            <div class="medium-6 cell">
+                <label> Habilidades:
+                    {{ form.habilidades }}
+                </label>
+            </div>     
+            <div class="medium-6 cell">
+                <label> Habilidades:
+                    {{ form.image }}
+                </label>
+            </div>         
+            <div class="medium-12 cell">
+                <button class="button success" type="submit">Agregar</button>              
+            </div>   
+        </form>        
+    </div>
+</div>
+  
+{% endblock content %}
+
